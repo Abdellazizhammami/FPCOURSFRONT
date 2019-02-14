@@ -1,0 +1,32 @@
+<!--
+<ul class="nav flex-column navbar-dark ">
+  
+  <li class="nav-item">
+    <a class="nav-link" href="#">Géré vos article</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Gestion des utilisateurs</a>
+  </li>
+  
+</ul>
+-->
+<nav class="navbar-primary" style="margin-top : 10 rem !important">
+  <a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
+  <ul class="navbar-primary-menu">
+    <li>
+      <a routerLink=""><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Dashboard</span></a>
+    </li>
+    <li>
+      <a routerLink="/dash/gart/creerarticle" routerLinkActive="active"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Céer article</span></a>
+    </li>
+    <li>
+      <a routerLink="/dash/gart/consulterart" routerLinkActive="active"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Lister articles</span></a>
+    </li>
+    <li>
+      <a routerLink="/dash/guser" routerLinkActive="active"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Gestion des utilisateurs</span></a>
+    </li>
+  </ul>
+</nav>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>

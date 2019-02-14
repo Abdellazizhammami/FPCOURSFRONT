@@ -1,0 +1,17 @@
+h5.titre {
+    text-align: center !important;
+    color: red !important;
+  }
+  button.btn.btn-primary {
+    margin-left: 239px;
+    margin-top: 20px;
+}
+form.ng-untouched.ng-pristine.ng-valid {
+    margin-left: 400 !important;
+    margin-top: 20px !important;
+    color: #1066c3;
+}
+form{
+ 
+ border: 1px solid !important;
+}

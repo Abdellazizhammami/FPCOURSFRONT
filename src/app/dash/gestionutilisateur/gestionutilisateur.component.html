@@ -1,0 +1,20 @@
+<ul class="list-group">
+
+    <div *ngFor="let user of users; index as k">
+
+  <li class="list-group-item list-group-item-info " style=  " display: flex; margin-bottom : 2rem !important ;"> 
+     <div class="float-left">
+    <span class="badge badge-pill badge-warning"  *ngIf="user.admin">Admin</span>
+    <span class="badge badge-pill badge-warning"  *ngIf="!user.admin">il n'est pas Admin</span> 
+  </div> 
+  <div style="justify-content:center">
+    <p >{{user.name}} {{user.lastname}}</p>
+  </div>
+  <div class="float-right">
+     <button type="button" class="btn btn-dark  .active"  *ngIf="!user.admin" (click)=addAdmin(user._id) >Ajouter Admin</button>
+     <button type="button" class="btn btn-danger  .active"  *ngIf="!user.admin" (click)=deleteUser(user._id) >effacer utilisateur</button>
+    </div>
+    </li>
+
+</div>
+</ul> 

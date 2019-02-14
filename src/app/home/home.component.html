@@ -1,0 +1,15 @@
+<div style="display :flex; flex-wrap :wrap; justify-content: space-around ;">
+<div *ngFor="let art of articles; index as k">
+
+    <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" >
+        <img src="./../../assets/bg5.jpg" class="card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title">{{art.titre}}</h5>
+          <p>by <a>{{art.auteur}}</a></p>
+          <p class="card-text">{{art.contenu | slice : 0 : 50}} ......</p>
+          <p class="card-text"><small class="text-muted">publié le {{art.date}}</small></p>
+          <button type="button" class="btn btn-secondary" (click)="onSelect(art)">lire l'article</button>
+        </div>
+      </div>
+</div>
+</div> 

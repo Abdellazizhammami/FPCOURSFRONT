@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">N°</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Auteur</th>
+      <th scope="col">Date de publication</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <div *ngFor="let art of article; index as k">
+      <tr>
+        <th scope="row">{{k}}</th>
+        <td>
+          {{art.titre}}
+        </td>
+        <td></td>
+        <td>
+          {{art.auteur}}
+        </td>
+        <td>
+          {{art.date}}
+        </td>
+      </tr>
+    </div>>
+  </tbody>
+</table>
