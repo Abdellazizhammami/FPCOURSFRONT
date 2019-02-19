@@ -11,16 +11,16 @@ import { LoginService } from '../shared/services/login.service';
 export class HomeComponent implements OnInit {
 
   constructor(private homeServ : HomeService, private routes : Router, private log : LoginService) { }
-public articles;
+public course;
   ngOnInit() {
 
     this.homeServ.home('all').subscribe(file=>{
-      this.articles=file.json();
+      this.course=file.json();
       console.log(file.json());
       if(!this.log.loggedIn()) {
-        this.articles=[];
+        this.course=[];
         for(let i = 0 ; i<4 ; i++){
-          this.articles[i] = file.json()[i];
+          this.course[i] = file.json()[i];
         }
       }
   })
@@ -28,7 +28,7 @@ public articles;
   }
   onSelect(art){
 
-    this.routes.navigate(['/article',art._id]) 
+    this.routes.navigate(['/cours',art._id]) 
 
   }
 
