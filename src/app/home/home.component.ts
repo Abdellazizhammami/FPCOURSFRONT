@@ -3,6 +3,7 @@ import { HomeService } from '../shared/services/home.service';
 import { Router } from '@angular/router';
 import { LoginService } from '../shared/services/login.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,8 +11,10 @@ import { LoginService } from '../shared/services/login.service';
 })
 export class HomeComponent implements OnInit {
 
+  
+
   constructor(private homeServ : HomeService, private routes : Router, private log : LoginService) { }
-public course;
+public course=[];
   ngOnInit() {
 
     this.homeServ.home('all').subscribe(file=>{
@@ -23,12 +26,13 @@ public course;
           this.course[i] = file.json()[i];
         }
       }
+     
   })
 
   }
-  onSelect(art){
+  onSelect(cours){
 
-    this.routes.navigate(['/cours',art._id]) 
+    this.routes.navigate(['/cours',cours._id,'chap',1]) 
 
   }
 
