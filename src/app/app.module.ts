@@ -17,9 +17,9 @@ import { GestionarticleComponent } from './dash/gestionarticle/gestionarticle.co
 import { GestionutilisateurComponent } from './dash/gestionutilisateur/gestionutilisateur.component';
 import { ListerarticleComponent } from './dash/gestionarticle/listerarticle/listerarticle.component';
 import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer-article.component';
+import { ChapterComponent } from './cours/chapter/chapter.component';
 
-import { ChapterComponent } from './article/chapter/chapter.component';
-
+ 
 
 
 @NgModule({
