@@ -18,6 +18,10 @@ import { GestionutilisateurComponent } from './dash/gestionutilisateur/gestionut
 import { ListerarticleComponent } from './dash/gestionarticle/listerarticle/listerarticle.component';
 import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer-article.component';
 
+import {NgxPaginationModule} from 'ngx-pagination';
+import { ChapterComponent } from './article/chapter/chapter.component';
+
+
 
 
 @NgModule({
@@ -31,7 +35,8 @@ import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer
     GestionarticleComponent,
     GestionutilisateurComponent,
     ListerarticleComponent,
-    CreerArticleComponent
+    CreerArticleComponent,
+    ChapterComponent
 
   ],
   imports: [
@@ -40,7 +45,8 @@ import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer
     
     AppRoutingModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
     
     
   

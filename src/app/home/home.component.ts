@@ -28,7 +28,7 @@ public articles;
   }
   onSelect(art){
 
-    this.routes.navigate(['/article',art._id]) 
+    this.routes.navigate(['/article',art._id,'/chapter',1]) 
 
   }
 

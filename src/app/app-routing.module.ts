@@ -12,10 +12,14 @@ import { GestionarticleComponent } from './dash/gestionarticle/gestionarticle.co
 import { GestionutilisateurComponent } from './dash/gestionutilisateur/gestionutilisateur.component';
 import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer-article.component';
 import { ListerarticleComponent } from './dash/gestionarticle/listerarticle/listerarticle.component';
+import { ChapterComponent } from './article/chapter/chapter.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'article/:id', component: ArticleComponent, canActivate: [AuthGuard] },
+  { path: 'article/:id', component: ArticleComponent, canActivate: [AuthGuard],children: [
+    { path: 'chapter/:np', component: ChapterComponent }
+  ]} ,
   { path: 'artbyaut/:aut', component: ArtbyautComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
@@ -32,6 +36,9 @@ const routes: Routes = [
       { path: 'guser', component: GestionutilisateurComponent }
     ]
   },
+
+ 
+
   { path: "**", component: HomeComponent }
   /*{
      path: '', redirectTo: 'home'

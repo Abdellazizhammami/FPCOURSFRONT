@@ -3,7 +3,7 @@ import { BlogService } from '../shared/services/blog.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CommentaireService } from '../shared/services/commentaire.service';
 import { LoginService } from '../shared/services/login.service';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @Component({
@@ -25,19 +25,26 @@ export class ArticleComponent implements OnInit {
   public updatecorp;
   public updateState = false;
   public ucomid;
+
+  
+
+  
+
   constructor(private article: BlogService, private comment: CommentaireService,  private routes: ActivatedRoute, private rt : Router, private auth : LoginService) { }
 
   ngOnInit() {
     //let id = this.routes.snapshot.paramMap.get('id');
     this.routes.paramMap.subscribe((params: ParamMap) => {
       let id = params.get('id');
+      
       this.idArt = id;
-      this.user = this.auth.getUser();
-      console.log(this.user);
+      //this.user = this.auth.getUser();
+      //console.log(this.user);
       console.log(this.idArt);
     });
+   // this.rt.navigate(['/article',this.idArt,'/chapter',1]); 
 
-
+/*
     this.article.listerArts(this.idArt).subscribe(file => {
       this.art = file;
       console.log(this.idArt);
@@ -52,7 +59,7 @@ export class ArticleComponent implements OnInit {
       console.log(file);
     });
     
-
+*/
   
 
 }
@@ -60,6 +67,9 @@ onSelect(aut){
 
   this.rt.navigate(['/artbyaut',aut]); 
 
+}
+pageChange(npage){
+  this.rt.navigate(['/article',this.idArt,'chapter',npage]); 
 }
 
 submit(){
