@@ -36,12 +36,13 @@ export class ArticleComponent implements OnInit {
       
       console.log(this.idArt);
     });
+    console.log('idart est:'+this.idArt);
 
 
-    this.article.listerArts(this.idArt).subscribe(file => {
+    this.article.consCours(this.idArt).subscribe(file => {
       this.art = file;
      
-      console.log(file);
+      //console.log(file);
       
       this.status = true;
     }, err => console.log(err));
@@ -63,7 +64,7 @@ onSelect(aut){
 }
 pageChange(np){
 
-  this.rt.navigate(['/article',this.idArt,'chap',np]); 
+  this.rt.navigate(['/cours',this.idArt,'chap',np]); 
 
 }
 

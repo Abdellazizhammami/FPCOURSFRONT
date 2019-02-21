@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ArticleComponent } from './article/article.component';
+
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './shared/userInterfaces/navbar/navbar.component';
@@ -12,12 +12,16 @@ import { GestionarticleComponent } from './dash/gestionarticle/gestionarticle.co
 import { GestionutilisateurComponent } from './dash/gestionutilisateur/gestionutilisateur.component';
 import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer-article.component';
 import { ListerarticleComponent } from './dash/gestionarticle/listerarticle/listerarticle.component';
-import { ChapterComponent } from './article/chapter/chapter.component';
+import { ChapterComponent } from './cours/chapter/chapter.component';
+import { ArticleComponent } from './cours/article.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'article/:id', component: ArticleComponent, canActivate: [AuthGuard],children:[
-    {path:'chap/:np', component:ChapterComponent}] },
+  { path: 'cours/:id', component: ArticleComponent, canActivate: [AuthGuard],
+  children:[
+    {path:'chap/:np', component:ChapterComponent,canActivate:[AuthGuard]}
+  ] },
   { path: 'artbyaut/:aut', component: ArtbyautComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
@@ -43,7 +47,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{paramsInheritanceStrategy :'always'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

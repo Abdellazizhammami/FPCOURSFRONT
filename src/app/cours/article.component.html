@@ -38,7 +38,7 @@
       <ul class="pagination pagination-sm">
 
        
-        <div *ngFor="let i of art.chapitres;k as index">
+        <div *ngFor="let i of art.chapitres;index as k">
         <li class="page-item"><a class="page-link" (click)="pageChange(k)">{{k}}</a></li>
       </div>
       </ul>
