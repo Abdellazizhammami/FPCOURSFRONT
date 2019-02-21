@@ -9,21 +9,21 @@ export class CommentaireService {
 
   constructor(private http: HttpClient) {}
     public addComment(iduser, idarticle, corp){
-      return this.http.post<any>('http://localhost:3001/article/ajoutComment/'+ iduser +'/'+ idarticle,corp);
+      return this.http.post<any>('http://localhost:3001/cours/ajoutComment/'+ iduser +'/'+ idarticle,corp);
       
     }
     
     listerComment(idarticle) {
-      return this.http.get<any>('http://localhost:3001/article/listerComment/'+idarticle); 
+      return this.http.get<any>('http://localhost:3001/cours/listerComment/'+idarticle); 
 
     }
 
     deleteComment(idcomment, iduser){
-      return this.http.get<any>('http://localhost:3001/article/deletecomment/'+idcomment+'/'+iduser)
+      return this.http.get<any>('http://localhost:3001/cours/deletecomment/'+idcomment+'/'+iduser)
     }
 
     updateComment(iduser, idcomment, corp){
-      return this.http.post<any>('http://localhost:3001/article/updatecomment/'+iduser+'/'+idcomment, corp)
+      return this.http.post<any>('http://localhost:3001/cours/updatecomment/'+iduser+'/'+idcomment, corp)
     }
    }
 

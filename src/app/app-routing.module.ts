@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ArticleComponent } from './article/article.component';
+
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './shared/userInterfaces/navbar/navbar.component';
@@ -13,13 +13,12 @@ import { GestionutilisateurComponent } from './dash/gestionutilisateur/gestionut
 import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer-article.component';
 import { ListerarticleComponent } from './dash/gestionarticle/listerarticle/listerarticle.component';
 import { ChapterComponent } from './article/chapter/chapter.component';
-
+import { ArticleComponent } from './cours/article.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'article/:id', component: ArticleComponent, canActivate: [AuthGuard],children: [
-    { path: 'chapter/:np', component: ChapterComponent }
-  ]} ,
+  { path: 'article/:id', component: ArticleComponent, canActivate: [AuthGuard],children:[
+    {path:'chap/:np', component:ChapterComponent}] },
   { path: 'artbyaut/:aut', component: ArtbyautComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },

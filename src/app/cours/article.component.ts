@@ -38,8 +38,8 @@ export class ArticleComponent implements OnInit {
       let id = params.get('id');
       
       this.idArt = id;
-      //this.user = this.auth.getUser();
-      //console.log(this.user);
+      this.user = this.auth.getUser();
+      
       console.log(this.idArt);
     });
    // this.rt.navigate(['/article',this.idArt,'/chapter',1]); 
@@ -47,7 +47,7 @@ export class ArticleComponent implements OnInit {
 /*
     this.article.listerArts(this.idArt).subscribe(file => {
       this.art = file;
-      console.log(this.idArt);
+     
       console.log(file);
       
       this.status = true;
@@ -68,8 +68,10 @@ onSelect(aut){
   this.rt.navigate(['/artbyaut',aut]); 
 
 }
-pageChange(npage){
-  this.rt.navigate(['/article',this.idArt,'chapter',npage]); 
+pageChange(np){
+
+  this.rt.navigate(['/article',this.idArt,'chap',np]); 
+
 }
 
 submit(){
