@@ -23,7 +23,7 @@
       <!-- Author -->
 
       <h6>by
-        <a (click)="onSelect(art.auteur)">{{art.auteur}}</a>
+        <a (click)="onSelect(art.prof._id)">{{art.prof.name}} {{art.prof.lastname}}</a>
       </h6>
 
 
@@ -32,7 +32,17 @@
       <!-- Post Content -->
 
 
-      <p>{{art.contenu}}</p>
+     <router-outlet></router-outlet>
+
+     <nav aria-label="...">
+      <ul class="pagination pagination-sm">
+
+       
+        <div *ngFor="let i of art.chapitres;k as index">
+        <li class="page-item"><a class="page-link" (click)="pageChange(k)">{{k}}</a></li>
+      </div>
+      </ul>
+    </nav>
 
 
       <!-- Comments Form -->

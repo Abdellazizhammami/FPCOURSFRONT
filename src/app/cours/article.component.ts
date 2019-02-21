@@ -33,14 +33,14 @@ export class ArticleComponent implements OnInit {
       let id = params.get('id');
       this.idArt = id;
       this.user = this.auth.getUser();
-      console.log(this.user);
+      
       console.log(this.idArt);
     });
 
 
     this.article.listerArts(this.idArt).subscribe(file => {
       this.art = file;
-      console.log(this.idArt);
+     
       console.log(file);
       
       this.status = true;
@@ -59,6 +59,11 @@ export class ArticleComponent implements OnInit {
 onSelect(aut){
 
   this.rt.navigate(['/artbyaut',aut]); 
+
+}
+pageChange(np){
+
+  this.rt.navigate(['/article',this.idArt,'chap',np]); 
 
 }
 
