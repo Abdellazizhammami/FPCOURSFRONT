@@ -18,6 +18,7 @@ import { GestionutilisateurComponent } from './dash/gestionutilisateur/gestionut
 import { ListerarticleComponent } from './dash/gestionarticle/listerarticle/listerarticle.component';
 import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer-article.component';
 import { ChapterComponent } from './cours/chapter/chapter.component';
+import { RouterModule, Router } from '@angular/router';
 
  
 
@@ -38,6 +39,7 @@ import { ChapterComponent } from './cours/chapter/chapter.component';
 
   ],
   imports: [
+    
     BrowserModule,
     FormsModule,
     
