@@ -10,7 +10,7 @@
     <div *ngFor="let art of articles; index as k">
     
         <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" *ngIf="art.categorie=='Programming languages'" >
-            <img src="./../../assets/bg5.jpg" class="card-img-top" >
+            <img src="http://localhost:3001/image/viewImg/{{cours.image}} " width="28rem" height="300rem" class="card-img-top" >
             <div class="card-body">
               <h5 class="card-title">{{art.titre}}</h5>
               <p>by <a>{{art.prof.name}} {{art.prof.lastname}}</a></p>
@@ -33,7 +33,7 @@
   <div *ngFor="let art of articles; index as k">
   
       <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" *ngIf="art.categorie== 'Web Technologies'" >
-          <img src="./../../assets/bg5.jpg" class="card-img-top" >
+          <img src="http://localhost:3001/image/viewImg/{{cours.image}} " width="28rem" height="300rem" class="card-img-top" >
           <div class="card-body">
             <h5 class="card-title">{{art.titre}}</h5>
             <p>by <a>{{art.prof.name}} {{art.prof.lastname}}</a></p>
@@ -55,7 +55,7 @@
   <div *ngFor="let art of articles; index as k">
   
       <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" *ngIf="art.categorie=='Network & Systems'" >
-          <img src="./../../assets/bg5.jpg" class="card-img-top" >
+          <img src="http://localhost:3001/image/viewImg/{{cours.image}} " width="28rem" height="300rem" class="card-img-top" >
           <div class="card-body">
             <h5 class="card-title">{{art.titre}}</h5>
             <p>by <a>{{art.prof.name}} {{art.prof.lastname}}</a></p>
@@ -76,7 +76,7 @@
   <div *ngFor="let art of articles; index as k">
   
       <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" *ngIf="art.categorie=='Project Management'" >
-          <img src="./../../assets/bg5.jpg" class="card-img-top" >
+          <img src="http://localhost:3001/image/viewImg/{{cours.image}} " width="28rem" height="300rem" class="card-img-top" >
           <div class="card-body">
             <h5 class="card-title">{{art.titre}}</h5>
             <p>by <a>{{art.prof.name}} {{art.prof.lastname}}</a></p>

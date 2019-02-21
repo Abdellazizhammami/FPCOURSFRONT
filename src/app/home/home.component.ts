@@ -14,25 +14,25 @@ export class HomeComponent implements OnInit {
   
 
   constructor(private homeServ : HomeService, private routes : Router, private log : LoginService) { }
-public articles=[];
+public course=[];
   ngOnInit() {
 
     this.homeServ.home('all').subscribe(file=>{
-      this.articles=file.json();
+      this.course=file.json();
       console.log(file.json());
       if(!this.log.loggedIn()) {
-        this.articles=[];
+        this.course=[];
         for(let i = 0 ; i<4 ; i++){
-          this.articles[i] = file.json()[i];
+          this.course[i] = file.json()[i];
         }
       }
      
   })
 
   }
-  onSelect(art){
+  onSelect(cours){
 
-    this.routes.navigate(['/article',art._id,'chap',1]) 
+    this.routes.navigate(['/cours',cours._id,'chap',1]) 
 
   }
 
