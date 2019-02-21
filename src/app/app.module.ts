@@ -45,10 +45,6 @@ import { ChapterComponent } from './cours/chapter/chapter.component';
     HttpModule,
     HttpClientModule
     
-    
-    
-    
-  
 
 
 
