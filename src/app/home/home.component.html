@@ -7,16 +7,16 @@
 
 
   <div style="display :flex; flex-wrap :wrap; justify-content: space-around ;">
-    <div *ngFor="let art of articles; index as k">
+    <div *ngFor="let art of course; index as k">
     
         <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" *ngIf="art.categorie=='Programming languages'" >
-            <img src="http://localhost:3001/image/viewImg/{{cours.image}} " width="28rem" height="300rem" class="card-img-top" >
+            <img src="http://localhost:3001/image/viewImg/{{art.image}} " width="28rem" height="300rem" class="card-img-top" >
             <div class="card-body">
               <h5 class="card-title">{{art.titre}}</h5>
               <p>by <a>{{art.prof.name}} {{art.prof.lastname}}</a></p>
               <p class="card-text">{{art.chapitres[0].contenu | slice : 0 : 50}} ......</p>
               <p class="card-text"><small class="text-muted">publié le {{art.date}}</small></p>
-              <button type="button" class="btn btn-secondary" (click)="onSelect(art)">lire l'article</button>
+              <button type="button" class="btn btn-secondary" (click)="onSelect(art._id)">lire l'article</button>
             </div>
           </div>
     </div>
@@ -30,10 +30,10 @@
 </div>
 
 <div style="display :flex; flex-wrap :wrap; justify-content: space-around ;">
-  <div *ngFor="let art of articles; index as k">
+  <div *ngFor="let art of course; index as k">
   
       <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" *ngIf="art.categorie== 'Web Technologies'" >
-          <img src="http://localhost:3001/image/viewImg/{{cours.image}} " width="28rem" height="300rem" class="card-img-top" >
+          <img src="http://localhost:3001/image/viewImg/{{art.image}} " width="28rem" height="300rem" class="card-img-top" >
           <div class="card-body">
             <h5 class="card-title">{{art.titre}}</h5>
             <p>by <a>{{art.prof.name}} {{art.prof.lastname}}</a></p>
@@ -52,10 +52,10 @@
 
 </div>
 <div style="display :flex; flex-wrap :wrap; justify-content: space-around ;">
-  <div *ngFor="let art of articles; index as k">
+  <div *ngFor="let art of course; index as k">
   
       <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" *ngIf="art.categorie=='Network & Systems'" >
-          <img src="http://localhost:3001/image/viewImg/{{cours.image}} " width="28rem" height="300rem" class="card-img-top" >
+          <img src="http://localhost:3001/image/viewImg/{{art.image}} " width="28rem" height="300rem" class="card-img-top" >
           <div class="card-body">
             <h5 class="card-title">{{art.titre}}</h5>
             <p>by <a>{{art.prof.name}} {{art.prof.lastname}}</a></p>
@@ -73,10 +73,10 @@
 
 </div>
 <div style="display :flex; flex-wrap :wrap; justify-content: space-around ;">
-  <div *ngFor="let art of articles; index as k">
+  <div *ngFor="let art of course; index as k">
   
       <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" *ngIf="art.categorie=='Project Management'" >
-          <img src="http://localhost:3001/image/viewImg/{{cours.image}} " width="28rem" height="300rem" class="card-img-top" >
+          <img src="http://localhost:3001/image/viewImg/{{art.image}} " width="28rem" height="300rem" class="card-img-top" >
           <div class="card-body">
             <h5 class="card-title">{{art.titre}}</h5>
             <p>by <a>{{art.prof.name}} {{art.prof.lastname}}</a></p>

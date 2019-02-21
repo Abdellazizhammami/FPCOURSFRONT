@@ -42,13 +42,13 @@ export class ArticleComponent implements OnInit {
       
       console.log(this.idArt);
     });
-   // this.rt.navigate(['/article',this.idArt,'/chapter',1]); 
+    console.log('idart est:'+this.idArt);
 
-/*
-    this.article.listerArts(this.idArt).subscribe(file => {
+
+    this.article.consCours(this.idArt).subscribe(file => {
       this.art = file;
      
-      console.log(file);
+      //console.log(file);
       
       this.status = true;
     }, err => console.log(err));
@@ -59,7 +59,7 @@ export class ArticleComponent implements OnInit {
       console.log(file);
     });
     
-*/
+
   
 
 }
@@ -70,7 +70,7 @@ onSelect(aut){
 }
 pageChange(np){
 
-  this.rt.navigate(['/article',this.idArt,'chap',np]); 
+  this.rt.navigate(['/cours',this.idArt,'chap',np]); 
 
 }
 

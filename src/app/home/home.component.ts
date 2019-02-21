@@ -30,9 +30,9 @@ public course=[];
   })
 
   }
-  onSelect(cours){
+  onSelect(idcours){
 
-    this.routes.navigate(['/cours',cours._id,'chap',1]) 
+    this.routes.navigate(['/cours',idcours,'chap',0]) 
 
   }
 
