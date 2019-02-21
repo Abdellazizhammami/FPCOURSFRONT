@@ -3,7 +3,7 @@ import { BlogService } from '../shared/services/blog.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CommentaireService } from '../shared/services/commentaire.service';
 import { LoginService } from '../shared/services/login.service';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @Component({
@@ -25,12 +25,18 @@ export class ArticleComponent implements OnInit {
   public updatecorp;
   public updateState = false;
   public ucomid;
+
+  
+
+  
+
   constructor(private article: BlogService, private comment: CommentaireService,  private routes: ActivatedRoute, private rt : Router, private auth : LoginService) { }
 
   ngOnInit() {
     //let id = this.routes.snapshot.paramMap.get('id');
     this.routes.paramMap.subscribe((params: ParamMap) => {
       let id = params.get('id');
+      
       this.idArt = id;
       this.user = this.auth.getUser();
       

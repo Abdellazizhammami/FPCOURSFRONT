@@ -38,6 +38,9 @@ const routes: Routes = [
       { path: 'guser', component: GestionutilisateurComponent }
     ]
   },
+
+ 
+
   { path: "**", component: HomeComponent }
   /*{
      path: '', redirectTo: 'home'

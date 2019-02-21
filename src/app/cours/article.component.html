@@ -1,5 +1,6 @@
 <!-- Page Content -->
 <!--haka lazmou yji-->
+<router-outlet></router-outlet>
 <div class="container">
 
   <div class="row" *ngIf="status">
@@ -75,36 +76,42 @@
 
                     <input class="form-control" type="text" name="corpss" [(ngModel)]="updatecorp">
                     
-                  
-
-                    <button type="submit" class="btn btn-primary btn-md float-right"
-                      (click)="update(comment._id)">Update</button>
-                  </form>
-
+  
+                      <button type="submit" class="btn btn-primary btn-md float-right"
+                        (click)="update(comment._id)">Update</button>
+                    </form>
+  
+                  </div>
+  
+  
+  
+  
+  
                 </div>
-
-
-
-
-
+  
               </div>
-
-            </div>
-          </li>
-        </div>
-        
+            </li>
+          </div>
+          
+      
+      </ul>
+    </div>
+  
+  -->
+  
+  
+  </div>
+  </div>
+  
+  
+  
     
+  <!-- /.container -->
+  
+<nav aria-label="...">
+    <ul class="pagination pagination-sm">
+        <li class="page-item"><a class="page-link" (click)="pageChange(1)">1</a></li>
+      <li class="page-item"><a class="page-link" (click)="pageChange(2)">2</a></li>
+      <li class="page-item"><a class="page-link" (click)="pageChange(3)">3</a></li>
     </ul>
-  </div>
-
-
-
-
-
-
-
-
-  </div>
-
-</div>
-<!-- /.container -->
+  </nav>
