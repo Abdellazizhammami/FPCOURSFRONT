@@ -12,35 +12,35 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  mail :string;
-  pwd:string;
+  mail: string;
+  pwd: string;
   public new;
-  public userss : any;
-  public user ={};
+  public userss: any;
+  public user = {};
 
-  constructor(private logUser:LoginService, private routes : Router) { }
+  constructor(private logUser: LoginService, private routes: Router) { }
 
   ngOnInit() {
   }
 
-  loginUser(){
-    
-    console.log(this.user);
-    this.logUser.ApiLogin(this.user).subscribe(res=>{
-           localStorage.setItem('token',res.json().token);
-           
-          console.log(res.json());
+  loginUser() {
+
+
+    this.logUser.ApiLogin(this.user).subscribe(res => {
+      // this.logUser.userrr = this.logUser.getUser(res.json().token);
+      localStorage.setItem('token', res.json().token);
+      console.log(this.logUser.userrr);
 
 
 
-         
-          
-         // console.log(this.userss);
-          
-          this.routes.navigate(['/home']);
 
-      })
-}
+
+      // console.log(this.userss);
+
+      this.routes.navigate(['/home']);
+
+    })
+  }
 }
 
 

@@ -26,7 +26,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'nav', component: NavbarComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'ajoutCours', component: CreerArticleComponent },
+  { path: 'home', component: HomeComponent},
   {
     path: 'dash', component: DashComponent, children: [
       {

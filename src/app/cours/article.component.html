@@ -1,6 +1,4 @@
-<!-- Page Content -->
-<!--haka lazmou yji-->
-<router-outlet></router-outlet>
+
 <div class="container">
 
   <div class="row" *ngIf="status">
@@ -62,13 +60,13 @@
             <div class="media mb-4">
 
               <div class="media-body">
-                <h5 class="mt-0">{{comment.Username}}</h5>
+                <h5 class="mt-0">{{comment.user.name}} {{comment.user.lastnamename}}</h5>
                 <p>
                   <span class="badge badge-pill badge-secondary">{{comment.date|date}}</span>{{comment.corps}}</p>
                 <button class="btn btn-secondary btn-md float-right" (click)="updates(comment._id,k)"
-                  *ngIf="user.user._id==comment.IdUser">Modifier</button>
+                  *ngIf="user.user._id==comment.user._id">Modifier</button>
                 <button class="btn btn-danger btn-md float-right" (click)="delete(comment._id)"
-                  *ngIf="user.user.admin || user.user._id == comment.IdUser">Delete</button>
+                  *ngIf="user.user._id == comment.user._id">Delete</button><!--ajouter le contrôle pour l'admin-->
 
 
                 <div class="media-body" *ngIf="updateState && (comment._id == ucomid)">

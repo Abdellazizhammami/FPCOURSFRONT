@@ -24,7 +24,7 @@ this.getuserss();
 
   getuserss(){
 
-    this.idAdmin = this.auth.getUser().user._id;
+    this.idAdmin = this.auth.userrr.user._id;
 
     this.userServ.getUsers(this.idAdmin).subscribe(file => {
       this.users = file;
