@@ -9,7 +9,8 @@ export class LoginService {
   public userrr;
 
   constructor(private http: Http) {
-    this.userrr = this.getUser(this.getToken());
+    if (this.getToken())
+      this.userrr = this.getUser(this.getToken());
   }
 
 
@@ -17,7 +18,8 @@ export class LoginService {
     return this.http.post('http://localhost:3001/auth/login', user);
   }
   public loggedIn() {
-    return !!localStorage.getItem('token');
+    if (localStorage.getItem('token')) { return true }
+    else { return false }
   }
   public getStatus() {
 
@@ -34,17 +36,21 @@ export class LoginService {
   }
   public logout() {
     localStorage.removeItem('token');
-    localStorage.removeItem('admin');
+
   }
   public getToken() {
     return localStorage.getItem('token');
   }
 
   public getUser(token) {
-    localStorage.setItem('token', token);
-    this.userrr = jwt_decode(localStorage.getItem('token'));
-    console.log(this.userrr);
-    return this.userrr;
+    console.log(token)
+    if (token !== null) {
+       localStorage.setItem('token', token);
+      this.userrr = jwt_decode(token);
+      console.log(this.userrr);
+      return this.userrr;
+    }
+    else return 'you are not connected';
   }
 
 }

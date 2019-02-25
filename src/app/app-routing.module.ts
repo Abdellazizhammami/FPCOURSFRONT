@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'nav', component: NavbarComponent },
   { path: 'ajoutCours', component: CreerArticleComponent },
-  { path: 'home', component: HomeComponent , canActivate: [AuthGuard]},
+  { path: 'home', component: HomeComponent},
   {
     path: 'dash', component: DashComponent, children: [
       {

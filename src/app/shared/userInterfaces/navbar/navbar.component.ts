@@ -10,24 +10,24 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public login : LoginService, private routes : Router) { 
+  constructor(public loginService: LoginService, private routes: Router) {
 
   }
 
-  public statu ;
+  public statu;
   public user;
   public isStudent;
 
-ngOnInit() {
- console.log(this.login.userrr.user);
+  ngOnInit() {
+    // console.log(this.login.userrr.user);
 
- console.log(this.statu);
+    // console.log(this.statu);
   }
-logout(){
-  this.login.logout();
- // this.statu = this.login.loggedIn();
-  // si le routes est /hom la page ne se refréche pas ask chahir for it
-  this.routes.navigate(['/home']);
+  logout() {
+    this.loginService.logout();
+    // this.statu = this.login.loggedIn();
+    // si le routes est /hom la page ne se refréche pas ask chahir for it
+    this.routes.navigate(['/home']);
 
-}
+  }
 }
