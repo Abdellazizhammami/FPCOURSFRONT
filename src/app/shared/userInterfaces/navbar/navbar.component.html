@@ -9,12 +9,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/dash" routerLinkActive="active" *ngIf="login.loggedIn()&& login.isAdmin()">dashboard
+        <a class="nav-link" routerLink="/dash" routerLinkActive="active" *ngIf="login.loggedIn()&& !login.isStudent()">dashboard
           <span class="sr-only">(current)</span>
         </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#">Soumission D'articles</a>
+          <a class="nav-link" routerLink="/ajoutCours" routerLinkActive="active">Soumission D'articles</a>
         </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Contact</a>
@@ -44,6 +44,12 @@
         <h6><a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="!login.loggedIn()">login</a></h6>
      
   </li>
+  <li class="nav-item">
+        
+          
+    <h6 class="nav-link" style="cursor :pointer !important;" *ngIf="login.loggedIn()">{{login?.userrr?.user?.status}} {{login?.userrr?.user?.name}} {{login?.userrr?.user?.lastname}}</h6>
+ 
+</li>
   <li class="nav-item">
         
           

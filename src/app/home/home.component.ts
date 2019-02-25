@@ -15,6 +15,10 @@ export class HomeComponent implements OnInit {
 
   constructor(private homeServ : HomeService, private routes : Router, private log : LoginService) { }
 public course=[];
+public progLang=[];
+public webTech=[];
+public netSys=[];
+public projMan=[];
   ngOnInit() {
 
     this.homeServ.home('all').subscribe(file=>{
@@ -29,6 +33,15 @@ public course=[];
      
   })
 
+  }
+  triTab(tab){
+    for(let i =0;i<tab.length;i++){
+      switch (tab[i].categorie){
+        case 'Programming languages' :{
+          this.progLang[i]
+        }
+      }
+    }
   }
   onSelect(idcours){
 

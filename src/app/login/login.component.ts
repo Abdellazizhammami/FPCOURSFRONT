@@ -25,11 +25,11 @@ export class LoginComponent implements OnInit {
 
   loginUser(){
     
-    console.log(this.user);
+    
     this.logUser.ApiLogin(this.user).subscribe(res=>{
-           localStorage.setItem('token',res.json().token);
+           this.logUser.userrr=this.logUser.getUser(res.json().token);
            
-          console.log(res.json());
+          console.log(this.logUser.userrr);
 
 
 

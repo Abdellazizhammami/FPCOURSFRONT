@@ -3,7 +3,7 @@ import { BlogService } from '../shared/services/blog.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CommentaireService } from '../shared/services/commentaire.service';
 import { LoginService } from '../shared/services/login.service';
-import {NgxPaginationModule} from 'ngx-pagination';
+
 
 
 @Component({
@@ -38,7 +38,7 @@ export class ArticleComponent implements OnInit {
       let id = params.get('id');
       
       this.idArt = id;
-      this.user = this.auth.getUser();
+      this.user = this.auth.userrr;
       
       console.log(this.idArt);
     });
