@@ -28,9 +28,10 @@ export class LoginService {
 
   }
   public isStudent() {
+    if(this.userrr){
 
     if (this.userrr.user.status == 'Student') { return true }
-    else { return false };
+    else { return false };} else return false;
 
 
   }
@@ -43,11 +44,11 @@ export class LoginService {
   }
 
   public getUser(token) {
-    console.log(token)
+    
     if (token !== null) {
        localStorage.setItem('token', token);
       this.userrr = jwt_decode(token);
-      console.log(this.userrr);
+      
       return this.userrr;
     }
     else return 'you are not connected';

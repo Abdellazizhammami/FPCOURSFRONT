@@ -7,7 +7,7 @@
 
 
   <div style="display :flex; flex-wrap :wrap; justify-content: space-around ;">
-    <div *ngFor="let art of course; index as k">
+    <div *ngFor="let art of progLang; index as k">
     
         <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" *ngIf="art.categorie=='Programming languages'" >
             <img src="http://localhost:3001/image/viewImg/{{art.image}} " width="28rem" height="300rem" class="card-img-top" >
@@ -30,7 +30,7 @@
 </div>
 
 <div style="display :flex; flex-wrap :wrap; justify-content: space-around ;">
-  <div *ngFor="let art of course; index as k">
+  <div *ngFor="let art of webTech; index as k">
   
       <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" *ngIf="art.categorie== 'Web Technologies'" >
           <img src="http://localhost:3001/image/viewImg/{{art.image}} " width="28rem" height="300rem" class="card-img-top" >
@@ -52,7 +52,7 @@
 
 </div>
 <div style="display :flex; flex-wrap :wrap; justify-content: space-around ;">
-  <div *ngFor="let art of course; index as k">
+  <div *ngFor="let art of netSys; index as k">
   
       <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" *ngIf="art.categorie=='Network & Systems'" >
           <img src="http://localhost:3001/image/viewImg/{{art.image}} " width="28rem" height="300rem" class="card-img-top" >
@@ -73,7 +73,7 @@
 
 </div>
 <div style="display :flex; flex-wrap :wrap; justify-content: space-around ;">
-  <div *ngFor="let art of course; index as k">
+  <div *ngFor="let art of projMan; index as k">
   
       <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" *ngIf="art.categorie=='Project Management'" >
           <img src="http://localhost:3001/image/viewImg/{{art.image}} " width="28rem" height="300rem" class="card-img-top" >
@@ -85,5 +85,5 @@
             <button type="button" class="btn btn-secondary" (click)="onSelect(art)">lire l'article</button>
           </div>
         </div>
-  </div>
+  </div> 
   </div>

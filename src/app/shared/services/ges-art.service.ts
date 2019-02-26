@@ -9,7 +9,7 @@ export class GesArtService {
 
   constructor(private http: HttpClient) { }
   public AjouterArts(Art){
-    return this.http.post('http://localhost:3001/article/createArt',Art);
+    return this.http.post('http://localhost:3001/api-img/imgUpload',Art);
     
   }
   public ModifArts(idArt,idUser,body){

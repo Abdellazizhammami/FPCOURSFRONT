@@ -27,15 +27,15 @@ export class LoginComponent implements OnInit {
 
 
     this.logUser.ApiLogin(this.user).subscribe(res => {
-      // this.logUser.userrr = this.logUser.getUser(res.json().token);
+     
       localStorage.setItem('token', res.json().token);
-      console.log(this.logUser.userrr);
+      
 
 
 
 
 
-      // console.log(this.userss);
+      
 
       this.routes.navigate(['/home']);
 
