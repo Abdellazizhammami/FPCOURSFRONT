@@ -12,8 +12,23 @@ export class CreerArticleComponent implements OnInit {
   art: any = {};
   public newArt;
   public utilisateur;
-  public chapitres = [{titre:"creeart0", contenu:"ycgvhbkjnlk,"},{titre:"creeart1", contenu:"ycgvhbkjnlk,zefzef"},{titre:"creeart2", contenu:"ycgvhbkjnlk,ijljlkjlhoi"}];
+  public fileimg= new FormData;
+  public chapitres = [
+    {
+      titre:"creeart0001",
+      contenu:"ycgvhbkjnlk"
+    },
+    {
+      titre:"creeart1",
+      contenu:"ycgvhbkjn"
+    },
+    {
+      titre:"creeart2",
+      contenu:"ycgvhbkjjlkjlhoi"
+    }
+  ];
   public categorie="Network & System";
+  public selectedFile :File=null;
   titre:string;
   contenu:string;
 
@@ -32,10 +47,21 @@ export class CreerArticleComponent implements OnInit {
 
 
   ajArt() {
-    this.addArt.AjouterArts(this.art).subscribe(file => {
+   
+    this.addArt.AjouterArts(this.selectedFile,'nameee',this.art.auteur,this.chapitres,this.categorie).subscribe(file => {
       this.newArt = file;
       console.log(file);
       this.rote.navigate(['/home']);
     })
   }
+  upImg(event){
+    console.log(event);
+    this.selectedFile= event.target.files[0];
+    
+    
+    
+  }
 }
+
+
+

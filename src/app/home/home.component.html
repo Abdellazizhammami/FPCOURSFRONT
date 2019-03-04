@@ -54,7 +54,7 @@
 <div style="display :flex; flex-wrap :wrap; justify-content: space-around ;">
   <div *ngFor="let art of netSys; index as k">
   
-      <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" *ngIf="art.categorie=='Network & Systems'" >
+      <div class="card" style="width: 40rem !important; margin-top: 2rem !important;">
           <img src="http://localhost:3001/image/viewImg/{{art.image}} " width="28rem" height="300rem" class="card-img-top" >
           <div class="card-body">
             <h5 class="card-title">{{art.titre}}</h5>
@@ -86,4 +86,5 @@
           </div>
         </div>
   </div> 
+  
   </div>
