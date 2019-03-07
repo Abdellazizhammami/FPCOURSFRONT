@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
       this.triTab(this.course);
     
       
-      console.log('etat est', this.log.loggedIn())
+      
       if (!this.log.loggedIn()) {
         this.progLang = this.tabdeux(this.progLang);
         
