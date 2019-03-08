@@ -11,7 +11,22 @@
       <div class="form-group col-md-12">
        <!--hedhi div mte3 khalil-->
 
-
+       <form [formGroup]="form">
+       
+        
+  
+          
+          <button (click)="addCreds()">Ajouter chapitre</button>
+  
+          <div formArrayName="chapitres" *ngFor="let chap of form.get('chapitres').controls; let i = index">
+            <ng-container [formGroupName]="i">
+              <input placeholder="titre du chapitre" formControlName="titre">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="contenu"></textarea>
+            </ng-container>
+          </div>
+  
+        
+      </form>
 
 
 

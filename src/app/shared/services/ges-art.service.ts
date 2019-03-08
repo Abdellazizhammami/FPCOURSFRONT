@@ -37,7 +37,7 @@ export class GesArtService {
   }
 
   public EffacArts(idArt,idUser){
-    return this.http.get('http://localhost:3001/article/deleteArt'+idUser +'/'+ idArt);
+    return this.http.get('http://localhost:3001/cours/deleteC/'+idUser +'/'+ idArt);
     
   }
 
