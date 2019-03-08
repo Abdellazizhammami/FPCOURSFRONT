@@ -59,9 +59,9 @@
           <div class="card-body">
             <h5 class="card-title">{{art.titre}}</h5>
             <p>by <a>{{art.prof.name}} {{art.prof.lastname}}</a></p>
-            <p class="card-text">{{art.chapitres[0].contenu | slice : 0 : 50}} ......</p>
-            <p class="card-text"><small class="text-muted">publié le {{art.date}}</small></p>
-            <button type="button" class="btn btn-secondary" (click)="onSelect(art)">lire l'article</button>
+            <p class="card-text">{{art.chapitres[0].titre}} ......</p>
+            <p class="card-text"><small class="text-muted">publié le {{art.date | date}}</small></p>
+            <button type="button" class="btn btn-secondary" (click)="onSelect(art._id)">lire l'article</button>
           </div>
         </div>
   </div>
