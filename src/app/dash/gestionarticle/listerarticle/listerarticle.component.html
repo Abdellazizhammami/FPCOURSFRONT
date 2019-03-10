@@ -1,10 +1,17 @@
-<table class="table table-striped">
+<div class="container-fluid">
+  <div class="row">
+<table class="table">
   <thead>
     <tr>
       <th scope="col">N°</th>
       <th scope="col">Titre</th>
-      <th scope="col">Auteur</th>
+      
       <th scope="col">Date de publication</th>
+      <th scope="col">Statu</th>
+      <th scope="col">valider par :</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
 
     </tr>
   </thead>
@@ -15,14 +22,27 @@
         <td>
           {{art.titre}}
         </td>
-        <td></td>
+        
+        
         <td>
-          {{art.auteur}}
+          {{art.date|date}}
         </td>
         <td>
-          {{art.date}}
+          {{art.status}}
         </td>
+        
+        <td>
+          <button type="button" class="btn btn-danger" (click)="deleteC(art._id)">Delete</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-info">Update</button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-dark"(click)="onSelect(art._id)">Consulter</button>
+          </td>
       </tr>
-    </div>>
+    </div>
   </tbody>
 </table>
+</div>
+</div>

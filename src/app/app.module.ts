@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,7 @@ import { ListerarticleComponent } from './dash/gestionarticle/listerarticle/list
 import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer-article.component';
 import { ChapterComponent } from './cours/chapter/chapter.component';
 import { RouterModule, Router } from '@angular/router';
+import { ValidateCoursComponent } from './dash/gestionarticle/validate-cours/validate-cours.component';
 
  
 
@@ -35,7 +36,8 @@ import { RouterModule, Router } from '@angular/router';
     GestionutilisateurComponent,
     ListerarticleComponent,
     CreerArticleComponent,
-    ChapterComponent
+    ChapterComponent,
+    ValidateCoursComponent
 
   ],
   imports: [
@@ -45,7 +47,8 @@ import { RouterModule, Router } from '@angular/router';
     
     AppRoutingModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
     
 
 

@@ -14,6 +14,7 @@ import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer
 import { ListerarticleComponent } from './dash/gestionarticle/listerarticle/listerarticle.component';
 import { ChapterComponent } from './cours/chapter/chapter.component';
 import { ArticleComponent } from './cours/article.component';
+import { ValidateCoursComponent } from './dash/gestionarticle/validate-cours/validate-cours.component';
 
 
 const routes: Routes = [
@@ -36,7 +37,8 @@ const routes: Routes = [
           { path: 'consulterart', component:ListerarticleComponent}
         ]
       },
-      { path: 'guser', component: GestionutilisateurComponent }
+      { path: 'guser', component: GestionutilisateurComponent },
+      { path: 'validateCours', component: ValidateCoursComponent }
     ]
   },
 
