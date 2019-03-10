@@ -22,7 +22,10 @@
     <li>
       <a routerLink="/dash/gart/consulterart" routerLinkActive="active"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Lister articles</span></a>
     </li>
-    <li>
+    <li *ngIf="(status=='Teacher')||(status=='Admin')">
+      <a routerLink="/dash/validateCours" routerLinkActive="active"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Les articles en attente de validation</span></a>
+    </li>
+    <li *ngIf="status=='Admin'"> 
       <a routerLink="/dash/guser" routerLinkActive="active"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Gestion des utilisateurs</span></a>
     </li>
   </ul>

@@ -19,6 +19,7 @@ import { ListerarticleComponent } from './dash/gestionarticle/listerarticle/list
 import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer-article.component';
 import { ChapterComponent } from './cours/chapter/chapter.component';
 import { RouterModule, Router } from '@angular/router';
+import { ValidateCoursComponent } from './dash/gestionarticle/validate-cours/validate-cours.component';
 
  
 
@@ -35,7 +36,8 @@ import { RouterModule, Router } from '@angular/router';
     GestionutilisateurComponent,
     ListerarticleComponent,
     CreerArticleComponent,
-    ChapterComponent
+    ChapterComponent,
+    ValidateCoursComponent
 
   ],
   imports: [

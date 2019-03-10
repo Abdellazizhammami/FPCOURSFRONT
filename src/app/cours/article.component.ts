@@ -18,7 +18,7 @@ export class ArticleComponent implements OnInit {
   public corp:string;
   public corpss = { corps : "", userName:""};
   public textarea='add comment';
-  public comments=[{corps:''}];
+  public comments=[{corps:'',user:{_id:''},auto:false}];
   public user;
   public userName;
   public idcomment;
@@ -38,9 +38,9 @@ export class ArticleComponent implements OnInit {
       let id = params.get('id');
       
       this.idArt = id;
-      this.user = this.auth.userrr;
+      this.user = this.auth.userrr.user;
       
-      console.log(this.idArt);
+      
     });
     console.log('idart est:'+this.idArt);
 
@@ -54,11 +54,9 @@ export class ArticleComponent implements OnInit {
     }, err => console.log(err));
 
 
-    this.comment.listerComment(this.idArt ).subscribe(file => {
-      this.comments = file;
-      console.log(file);
-    });
-    
+  
+      
+  this.listercomments();
 
   
 
@@ -76,10 +74,10 @@ pageChange(np){
 
 submit(){
 
-  this.userName = this.user.user.name + ' '+this.user.user.lastname ;
+  this.userName = this.user.name + ' '+this.user.lastname ;
   this.corpss.corps= this.corp;
-  this.corpss.userName = this.userName;
-  this.comment.addComment(this.user.user._id,this.idArt,this.corpss).subscribe(file => {
+  
+  this.comment.addComment(this.user._id,this.idArt,this.corpss).subscribe(file => {
     console.log(file);
     console.log(this.corpss);
   this.textarea='';
@@ -92,7 +90,15 @@ listercomments(){
 
   this.comment.listerComment(this.idArt ).subscribe(file => {
   this.comments = file;
-  console.log(file);
+  for(var i=0;i<this.comments.length;i++){
+
+if(this.user._id.toString()==this.comments[i].user._id.toString()){
+
+this.comments[i].auto=true;
+} else {this.comments[i].auto=false;}
+
+  }
+  
 
 });
 
