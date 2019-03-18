@@ -22,15 +22,13 @@ public chap={
   ngOnInit() {
     this.routes.paramMap.subscribe((params: ParamMap) => {
       let i = params.get('np');
-      console.log(i);
       let id = params.get('id');
       this.idArt = id;
-      console.log(params);
+ 
       this.np=i;
       this.article.consCours(this.idArt).subscribe(file => {
         this.art = file;
-        console.log("hedha l'id"+this.idArt);
-        console.log(file);
+        
         this.np=parseInt(this.np);
         
         this.chap=this.art.chapitres[this.np];

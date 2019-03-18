@@ -11,9 +11,10 @@
 
           <th scope="col">Date de publication</th>
           <th scope="col">Statu</th>
+          <th scope="col">validateBy</th>
 
 
-          <th scope="col"></th>
+         
 
         </tr>
       </thead>
@@ -33,7 +34,7 @@
               {{art.status}}
             </td>
             <td>
-              <div *ngFor="let v of art.validatedBy">
+              <div *ngFor="let v of art.validateBy">
                 {{v.name}} {{v.lastname}}
               </div>
             </td>

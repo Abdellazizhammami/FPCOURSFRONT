@@ -1,0 +1,54 @@
+<div class="container">
+
+    <div class="row" *ngIf="status">
+      <!--malezmch famma navbar-->
+      <!-- Post Content Column -->
+      <div class="col-md-12">
+  
+        <!-- Date/Time -->
+        <p>Posted on {{art.date | date}}</p>
+  
+        <hr>
+  
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="http://localhost:3001/image/viewImg/{{art.image}}" alt="">
+  
+        <hr>
+  
+        <!-- Title -->
+        <h1 class="mt-4">{{art.titre}}</h1>
+  
+        <!-- Author -->
+  
+        <h6>by
+          <a (click)="onSelect(art.prof._id)">{{art.prof.name}} {{art.prof.lastname}}</a>
+        </h6>
+  
+  
+  
+  
+        <!-- Post Content -->
+  
+  
+        <router-outlet></router-outlet>
+  
+        <nav aria-label="...">
+          <ul class="pagination pagination-sm">
+  
+  
+            <div *ngFor="let i of art.chapitres;index as k">
+              <li class="page-item"><a class="page-link" (click)="pageChange(k)">{{k}}</a></li>
+            </div>
+          </ul>
+        </nav>
+  
+  
+        
+      </div>
+      <button type="button" class="btn btn-success"(click)="validate()" [disabled]="disable">validate</button>
+  
+  
+  
+  
+    </div>
+  </div>

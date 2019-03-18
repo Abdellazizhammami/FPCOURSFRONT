@@ -15,6 +15,8 @@ import { ListerarticleComponent } from './dash/gestionarticle/listerarticle/list
 import { ChapterComponent } from './cours/chapter/chapter.component';
 import { ArticleComponent } from './cours/article.component';
 import { ValidateCoursComponent } from './dash/gestionarticle/validate-cours/validate-cours.component';
+import { LireartComponent } from './dash/gestionarticle/lireart/lireart.component';
+
 
 
 const routes: Routes = [
@@ -38,7 +40,10 @@ const routes: Routes = [
         ]
       },
       { path: 'guser', component: GestionutilisateurComponent },
-      { path: 'validateCours', component: ValidateCoursComponent }
+      { path: 'validateCours', component: ValidateCoursComponent },
+      {path:'vCours/:id',component:LireartComponent,canActivate:[AuthGuard],children:[
+        {path:'chap/:np', component:ChapterComponent,canActivate:[AuthGuard]}
+      ]}
     ]
   },
 
