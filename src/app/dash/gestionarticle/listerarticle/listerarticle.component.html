@@ -1,48 +1,48 @@
 <div class="container-fluid">
   <div class="row">
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">N°</th>
-      <th scope="col">Titre</th>
-      
-      <th scope="col">Date de publication</th>
-      <th scope="col">Statu</th>
-      <th scope="col">valider par :</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">N°</th>
+          <th scope="col">Titre</th>
 
-    </tr>
-  </thead>
-  <tbody>
-    <div *ngFor="let art of article; index as k">
-      <tr>
-        <th scope="row">{{k}}</th>
-        <td>
-          {{art.titre}}
-        </td>
-        
-        
-        <td>
-          {{art.date|date}}
-        </td>
-        <td>
-          {{art.status}}
-        </td>
-        
-        <td>
-          <button type="button" class="btn btn-danger" (click)="deleteC(art._id)">Delete</button>
-        </td>
-        <td>
-          <button type="button" class="btn btn-info">Update</button>
-        </td>
-        <td>
-            <button type="button" class="btn btn-dark"(click)="onSelect(art._id)">Consulter</button>
-          </td>
-      </tr>
-    </div>
-  </tbody>
-</table>
-</div>
+          <th scope="col">Date de publication</th>
+          <th scope="col">Statu</th>
+          <th scope="col">valider par :</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <div *ngFor="let art of article; index as k">
+          <tr>
+            <th scope="row">{{k}}</th>
+            <td>
+              {{art.titre}}
+            </td>
+
+
+            <td>
+              {{art.date|date}}
+            </td>
+            <td>
+              {{art.status}}
+            </td>
+
+            <td>
+              <button type="button" class="btn btn-danger" (click)="deleteC(art._id)">Delete</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-info">Update</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-dark" (click)="onSelect(art._id)">Consulter</button>
+            </td>
+          </tr>
+        </div>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -105,7 +105,7 @@ this.comments[i].auto=true;
 }
 
 delete(idcom){
-  this.comment.deleteComment(idcom,this.user.user._id).subscribe(file => {
+  this.comment.deleteComment(idcom,this.user._id).subscribe(file => {
   //this.comments = file;
   console.log(file);
   this.listercomments();
@@ -114,7 +114,7 @@ delete(idcom){
 
 update(idcomment){
   this.corpss.corps=this.updatecorp;
-  this.comment.updateComment(this.user.user._id,idcomment,this.corpss).subscribe(file => {
+  this.comment.updateComment(this.user._id,idcomment,this.corpss).subscribe(file => {
     //this.comments =file;
     console.log(file);
     this.updateState=false;

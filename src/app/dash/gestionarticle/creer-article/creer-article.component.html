@@ -6,22 +6,27 @@
       <div class="form-group col-md-12">
         <label>Titre:</label>
         <input [(ngModel)]='art.titre' name='titre' class="form-control" id="titre" placeholder="Titre Article">
+        <select class="custom-select" id="inputGroupSelect01" [(ngModel)]='art.categorie' name="art.categorie">
+          <option selected>Choose...</option>
+          <option value="Programming languages">Programming languages</option>
+          <option value="Web Technologies">Web Technologies</option>
+          <option value="Network & System">Network & System</option>
+          <option value="Project Management">Project Management</option>
+        </select>
 
       </div>
       <div class="form-group col-md-12">
        <!--hedhi div mte3 khalil-->
 
        <form [formGroup]="form">
-       
-        
-  
           
-          <button (click)="addCreds()">Ajouter chapitre</button>
+          <button (click)="addChap()">Ajouter chapitre</button>
   
           <div formArrayName="chapitres" *ngFor="let chap of form.get('chapitres').controls; let i = index">
             <ng-container [formGroupName]="i">
               <input placeholder="titre du chapitre" formControlName="titre">
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="contenu"></textarea>
+              <button (click)="removeChap(i)">Effacer chapitre</button>
             </ng-container>
           </div>
   

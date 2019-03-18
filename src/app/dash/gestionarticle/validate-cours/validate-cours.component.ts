@@ -26,29 +26,24 @@ public other = [];
   ngOnInit() {
     this.user= this.auth.userrr.user;
     this.art.home('all').subscribe(file =>{
-      
       this.article=file.json();
       this.article=this.initValid(this.article);
-      console.log(this.article);
       this.triTab();
-      
-    
-      
-
     })
     
   }
   initValid(tab){
     for(var i =0;i<tab.length;i++){
-      if(!tab[i].validatedBy){
-        tab[i].validatedBy=[{name:"ce cours n'est pas encore",lastname:" validée par personne"}]
+      console.log(tab[i].validateBy);
+      if(!tab[i].validateBy){
+        tab[i].validateBy=[{name:"ce cours n'est pas encore",lastname:" validée par personne"}]
       }
     }
     return tab;
   }
   onSelect(idcours) {
 
-    this.rote.navigate(['/cours', idcours, 'chap', 0])
+    this.rote.navigate(['/dash/vCours', idcours, 'chap', 0]);
   
   }
   triTab() {
@@ -58,27 +53,20 @@ public other = [];
     let l = 0;
     let m = 0;
     let n = 0;
-    console.log('test1');
     this.article.forEach((tab)=> {
-      console.log(tab);
       switch (tab.status) {
-        case "druft": 
-          console.log('test2');
+        case "druft":        
           this.drufts[j] = tab;
           j++;
-          console.log('test3');
           break;
-        
         case "validated": 
           this.validated[k] = tab;
           k++;
           break;
-        
         case "rejected": 
           this.rejecteds[l] = tab;
           l++;
           break;
-        
         case 'pending': 
           this.pendings[m] = tab;
           m++;

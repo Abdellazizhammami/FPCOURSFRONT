@@ -20,6 +20,7 @@ import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer
 import { ChapterComponent } from './cours/chapter/chapter.component';
 import { RouterModule, Router } from '@angular/router';
 import { ValidateCoursComponent } from './dash/gestionarticle/validate-cours/validate-cours.component';
+import { LireartComponent } from './dash/gestionarticle/lireart/lireart.component';
 
  
 
@@ -37,7 +38,8 @@ import { ValidateCoursComponent } from './dash/gestionarticle/validate-cours/val
     ListerarticleComponent,
     CreerArticleComponent,
     ChapterComponent,
-    ValidateCoursComponent
+    ValidateCoursComponent,
+    LireartComponent
 
   ],
   imports: [
