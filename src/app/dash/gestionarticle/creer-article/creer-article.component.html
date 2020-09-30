@@ -16,37 +16,97 @@
 
       </div>
       <div class="form-group col-md-12">
-       <!--hedhi div mte3 khalil-->
+        <!--hedhi div mte3 khalil-->
 
-       <form [formGroup]="form">
-          
+        <form [formGroup]="form">
+
           <button (click)="addChap()">Ajouter chapitre</button>
-  
+
           <div formArrayName="chapitres" *ngFor="let chap of form.get('chapitres').controls; let i = index">
             <ng-container [formGroupName]="i">
               <input placeholder="titre du chapitre" formControlName="titre">
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="contenu"></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                formControlName="contenu"></textarea>
               <button (click)="removeChap(i)">Effacer chapitre</button>
             </ng-container>
           </div>
-  
-        
-      </form>
+
+
+        </form>
 
 
 
 
 
 
-       <!--div mte3 khalil toufa hné-->
+
+        <!--div mte3 khalil toufa hné-->
 
       </div>
       <div class="form-group col-md-12">
         <label>Ajouter une image:</label>
       </div>
       <div class="form-group col-md-12">
-        <input  (change)='upImg($event)'  name='image' id="input" type="file" class="file" placeholder="telecharger une photo">
+        <input (change)='upImg($event)' name='image' id="input" type="file" class="file"
+          placeholder="telecharger une photo">
       </div>
+
+      <form [formGroup]="form2">
+        <label>Titre:</label>
+        <input type="text" formControleName='titre' name='titre' class="form-control" id="titre"
+          placeholder="Titre test">
+
+        <button (click)="addQuest()">Ajouter une Question</button>
+
+        <div formArrayName="questions" *ngFor="let quest of form2.get('questions').controls; let j = index">
+          <ng-container [formGroupName]="j">
+            <div>
+              <label>Question {{j}}:</label>
+            </div>
+            <input placeholder="Enoncé de Question" formControlName="enonce" type="text">
+           
+           <div>
+              <input placeholder="propo0" formControlName="propo0" type="text">
+              <div class="form-check">
+                  <label class="form-check-label" for="exampleCheck1">is true ? :</label>
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="rep0">
+                  
+                </div>
+
+           </div>
+           <div>
+              <input placeholder="propo1" formControlName="propo1" type="text">
+              <div class="form-check">
+                  <label class="form-check-label" for="exampleCheck1">is true ? :</label>
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="rep1">
+                  
+                </div>
+              
+           </div>
+           <div>
+              <input placeholder="propo2" formControlName="propo2" type="text">
+              <div class="form-check">
+                  <label class="form-check-label" for="exampleCheck1">is true ? :</label>
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="rep2">
+                  
+                </div>
+              
+           </div>
+           <div>
+              <input placeholder="propo3" formControlName="propo3" type="text">
+              <div class="form-check">
+                  <label class="form-check-label" for="exampleCheck1">is true ? :</label>
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="rep3">
+                  
+                </div>
+              
+           </div>
+            
+          </ng-container>
+        </div>
+
+
+      </form>
 
       <div class="form-group col-md-12">
         <button type="button" class="btn btn-primary" (click)=ajArt()>Enregister</button>
